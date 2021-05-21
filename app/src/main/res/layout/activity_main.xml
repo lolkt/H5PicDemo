@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="H5调用本地图片"
+        android:visibility="gone"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"

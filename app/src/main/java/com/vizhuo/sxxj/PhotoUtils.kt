@@ -1,4 +1,4 @@
-package com.gfd.h5pic
+package com.vizhuo.sxxj
 
 import android.app.Activity
 import android.content.ContentUris

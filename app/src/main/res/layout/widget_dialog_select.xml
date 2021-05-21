@@ -18,10 +18,12 @@
             android:layout_height="43dp"
             android:gravity="center"
             android:text="相册"
+            android:visibility="gone"
             android:textColor="#ff0095de"
             android:textSize="19sp" />
 
         <View
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="#ffcccccc" />

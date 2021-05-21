@@ -1,4 +1,4 @@
-package com.gfd.h5pic
+package com.vizhuo.sxxj
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

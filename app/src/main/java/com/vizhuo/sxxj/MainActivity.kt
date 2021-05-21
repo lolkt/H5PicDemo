@@ -1,4 +1,4 @@
-package com.gfd.h5pic
+package com.vizhuo.sxxj
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -7,18 +7,12 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.*
 import android.webkit.WebSettings.LayoutAlgorithm.SINGLE_COLUMN
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import com.gfd.h5pic.PhotoUtils.compressPicture
-import com.gfd.h5pic.PhotoUtils.getSdCardDirectory
-import com.gfd.h5pic.PhotoUtils.startAlbum
-import com.gfd.h5pic.PhotoUtils.startCamera
-import com.gfd.h5pic.R.id.mWebView
 import kotlinx.android.synthetic.main.activity_main.*
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.RuntimePermissions
@@ -29,12 +23,12 @@ class MainActivity : AppCompatActivity() {
 
     private var mSelectPhotoDialog: SelectDialog? = null
     private var mFilePathCallback: ValueCallback<Array<Uri>>? = null
-
+    private val url: String = "http://sxadp.zhencai8.com/h5/website/inspection/toInspectionLogin.do"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initWebView()
-        mWebView.loadUrl("file:///android_asset/index.html")
+        mWebView.loadUrl(url)
     }
 
     @NeedsPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
