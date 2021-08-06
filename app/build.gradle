@@ -12,8 +12,8 @@ android {
         applicationId "com.vizhuo.sxxj"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 100
-        versionName "1.0.0"
+        versionCode 101
+        versionName "1.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -25,6 +25,12 @@ android {
                     outputFileName = "sx_xj_v${variant.versionName}_${releaseTime()}_${variant.name}.apk"
                 }
             }
+        }
+    }
+    // 本地集成aar需要此配置
+    repositories {
+        flatDir {
+            dirs 'libs'
         }
     }
 }
@@ -40,5 +46,18 @@ dependencies {
     implementation 'top.zibin:Luban:1.1.8'
     implementation "org.permissionsdispatcher:permissionsdispatcher:$permissions_version"
     kapt "org.permissionsdispatcher:permissionsdispatcher-processor:$permissions_version"
+
+    // 推荐集成方式， 其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.0.0
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.5.0'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+
+    //AndroidUtilCode----https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
+    api 'com.blankj:utilcodex:1.26.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation files('libs/tbs_sdk_thirdapp_v4.3.0.1148_43697_sharewithdownloadwithfile_withoutGame_obfs_20190805_175505.jar')
+    //AA注解框架----https://github.com/androidannotations/androidannotations--
+//    annotationProcessor "org.androidannotations:androidannotations:4.6.0"
+//    implementation 'org.androidannotations:androidannotations-api:4.6.0'
+
 
 }
